@@ -1,0 +1,54 @@
+@use "../styles/abstracts/z-index" as abs;
+
+.feature {
+  --color-background: var(--c-white);
+  --color-text: var(--c-grey-400);
+  --color-text-heading: var(--c-grey-500);
+  --color-box-shadow: var(--c-polo-blue);
+
+  background: linear-gradient(
+    to bottom,
+    var(--color-background-top) 4px,
+    white 4px
+  );
+  color: var(--color-text);
+  box-shadow: 0 abs.to-rem(15px) abs.to-rem(30px) abs.to-rem(-11px)
+    rgb(from var(--color-box-shadow) r g b / 0.5);
+
+  display: flex;
+  flex-direction: column;
+  gap: abs.to-rem(32px);
+
+  border-radius: abs.to-rem(8px);
+  padding: abs.to-rem(32px);
+  padding-bottom: abs.to-rem(47px);
+}
+
+.feature[data-feature="Supervisor"] {
+  --color-background-top: var(--c-cyan);
+}
+.feature[data-feature="Team Builder"] {
+  --color-background-top: var(--c-red);
+}
+.feature[data-feature="Karma"] {
+  --color-background-top: var(--c-orange);
+}
+.feature[data-feature="Calculator"] {
+  --color-background-top: var(--c-blue);
+}
+
+.feature > *:nth-child(1) {
+  display: inherit;
+  flex-direction: inherit;
+  gap: abs.to-rem(6px);
+}
+.feature > *:nth-child(2) {
+  align-self: end;
+}
+
+.feature h2 {
+  color: var(--color-text-heading);
+}
+.feature img {
+  display: block;
+}

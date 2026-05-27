@@ -1,5 +1,6 @@
 ---
-import "../styles/index.scss"
+import FeatureCard from "../components/FeatureCard.astro";
+import "../styles/index.scss";
 
 const features = [
   {
@@ -49,9 +50,7 @@ const features = [
     {
       features.map(({ heading, paragraph, icon }) => (
         <li>
-          <h2 class="text-preset-3">{heading}</h2>
-          <p class="text-preset-5">{paragraph}</p>
-          <img src={icon} alt="" />
+          <FeatureCard heading={heading} paragraph={paragraph} icon={icon} />
         </li>
       ))
     }
