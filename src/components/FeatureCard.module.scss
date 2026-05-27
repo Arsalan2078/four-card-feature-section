@@ -17,8 +17,10 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: abs.to-rem(32px);
 
+  height: 100%;
   border-radius: abs.to-rem(8px);
   padding: abs.to-rem(32px);
   padding-bottom: abs.to-rem(47px);
