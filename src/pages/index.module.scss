@@ -1,0 +1,86 @@
+@use "../styles/abstracts/z-index" as abs;
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding-block: abs.get-clamp(56px, 80px, 384px, 768px);
+  padding-inline: abs.get-clamp(31px, 54px, 384px, 768px);
+}
+
+.container {
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  gap: abs.get-clamp(60px, 74px, 384px, 768px);
+  margin: 0 auto;
+  width: min(100%, abs.to-rem(1114px));
+}
+
+.intro {
+  display: inherit;
+  flex-direction: inherit;
+  gap: abs.to-rem(16px);
+  width: min(100%, abs.to-rem(540px));
+  text-align: center;
+}
+
+.intro h1 {
+  display: inherit;
+  flex-direction: inherit;
+  gap: 0;
+}
+.intro h1 > span {
+  display: block;
+}
+
+.list {
+  display: grid;
+  gap: abs.to-rem(32px);
+}
+
+@media screen and (min-width: abs.to-rem(768px)) {
+  .body {
+    padding-block: abs.get-clamp(80px, 102px, 768px, 1440px);
+    padding-inline: abs.get-clamp(54px, 163px, 768px, 1440px);
+  }
+
+  .list {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .list > li:nth-child(1) {
+    grid-area: 1 / 2 / span 1 / span 2;
+  }
+  .list > li:nth-child(2) {
+    grid-area: 2 / 1 / span 1 / span 2;
+  }
+  .list > li:nth-child(3) {
+    grid-area: 2 / 3 / span 1 / span 2;
+  }
+  .list > li:nth-child(4) {
+    grid-area: 3 / 2 / span 1 / span 2;
+  }
+}
+
+@media screen and (min-width: abs.to-rem(1440px)) {
+  .list {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .list > li:nth-child(1) {
+    grid-area: 2 / 1 / span 2 / span 1;
+  }
+  .list > li:nth-child(2) {
+    grid-area: 1 / 2 / span 2 / span 1;
+  }
+  .list > li:nth-child(3) {
+    grid-area: 3 / 2 / span 2 / span 1;
+  }
+  .list > li:nth-child(4) {
+    grid-area: 2 / 3 / span 2 / span 1;
+  }
+}

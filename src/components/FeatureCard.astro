@@ -1,0 +1,13 @@
+---
+import css from "./FeatureCard.module.scss";
+const { heading, paragraph, icon } = Astro.props;
+---
+
+<div class={css.feature} data-feature={heading}>
+  <div>
+    <h2 class="text-preset-3">{heading}</h2>
+    <p class="text-preset-5">{paragraph}</p>
+  </div>
+
+  <img src={icon} alt="" />
+</div>

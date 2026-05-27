@@ -1,0 +1,39 @@
+@layer {
+  .text-preset-1,
+  .text-preset-2 {
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-24-36);
+    line-height: var(--lh-140);
+    letter-spacing: var(--ls-025);
+  }
+  .text-preset-1 {
+    font-weight: var(--fw-600);
+  }
+  .text-preset-2 {
+    font-weight: var(--fw-200);
+  }
+
+  .text-preset-3 {
+    font-family: var(--ff-poppins);
+    font-weight: var(--fw-600);
+    font-size: var(--fs-20);
+    line-height: var(--lh-135);
+    letter-spacing: var(--ls-0);
+  }
+
+  .text-preset-4 {
+    font-family: var(--ff-poppins);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-15);
+    line-height: var(--lh-140);
+    letter-spacing: var(--ls-0);
+  }
+
+  .text-preset-5 {
+    font-family: var(--ff-poppins);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-13);
+    line-height: var(--lh-160);
+    letter-spacing: var(--ls-0);
+  }
+}

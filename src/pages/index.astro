@@ -1,17 +1,69 @@
 ---
+import FeatureCard from "../components/FeatureCard.astro";
+import "../styles/globals.scss";
+import css from "./index.module.scss";
 
+const features = [
+  {
+    heading: "Supervisor",
+    paragraph: "Monitors activity to identify project roadblocks",
+    icon: "/images/icon-supervisor.svg",
+  },
+  {
+    heading: "Team Builder",
+    paragraph:
+      "Scans our talent network to create the optimal team for your project",
+    icon: "/images/icon-team-builder.svg",
+  },
+  {
+    heading: "Karma",
+    paragraph: "Regularly evaluates our talent to ensure quality",
+    icon: "/images/icon-karma.svg",
+  },
+  {
+    heading: "Calculator",
+    paragraph:
+      "Uses data from past projects to provide better delivery estimates",
+    icon: "/images/icon-calculator.svg",
+  },
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Frontend Mentor | Four Card Feature Section</title>
   </head>
-  <body>
-    <h1>Astro</h1>
+  <body class={`${css.body} text-preset-4`}>
+    <main class={css.container}>
+      <div class={css.intro}>
+        <h1>
+          <span class="text-preset-2">Reliable, efficient delivery</span>
+          <span class="text-preset-1">Powered by Technology</span>
+        </h1>
+
+        <p>
+          Our Artificial Intelligence powered tools use millions of project data
+          points to ensure that your project is successful
+        </p>
+      </div>
+
+      <ul class={css.list}>
+        {
+          features.map(({ heading, paragraph, icon }) => (
+            <li>
+              <FeatureCard
+                heading={heading}
+                paragraph={paragraph}
+                icon={icon}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </main>
   </body>
 </html>
