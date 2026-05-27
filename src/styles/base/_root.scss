@@ -1,0 +1,43 @@
+@use "../abstracts/z-index" as abs;
+
+:root {
+  // colors
+  --c-grey-500: #4d4f62;
+  --c-grey-400: #6a7178;
+  --c-snow: #fafafa;
+  --c-white: #ffffff;
+  --c-red: #ea5454;
+  --c-cyan: #44d3d2;
+  --c-blue: #549ef2;
+  --c-orange: #fcae4a;
+
+  --color-background-root: var(--c-snow);
+  --color-text-root: var(--c-grey-500);
+
+  // font-families
+  --ff-poppins: "Poppins", sans-serif;
+
+  // font-weights
+  --fw-200: 200;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  // font-sizes
+  --fs-24-36: #{abs.get-clamp(24px, 36px, 384px, 768px)};
+  --fs-20: #{abs.to-rem(20px)};
+  --fs-15: #{abs.to-rem(15px)};
+  --fs-13: #{abs.to-rem(13px)};
+
+  // line-heights
+  --lh-135: 1.35;
+  --lh-140: 1.4;
+  --lh-160: 1.6;
+
+  // letter-spacings
+  --ls-0: 0;
+  --ls-025: #{abs.to-rem(0.25px)};
+
+  // root styles
+  background-color: var(--color-background-root);
+  color: var(--color-text-root);
+}
